@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Bridge Keeper</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="gameContainer">
+        <canvas id="gameCanvas" width="1024" height="768"></canvas>
+        <div id="ui">
+            <div id="resourcePanel">
+                <div class="resource">
+                    <span class="resource-icon">🪵</span>
+                    <span id="wood">0</span>
+                </div>
+                <div class="resource">
+                    <span class="resource-icon">🪨</span>
+                    <span id="stone">0</span>
+                </div>
+                <div class="resource">
+                    <span class="resource-icon">⚙️</span>
+                    <span id="metal">0</span>
+                </div>
+            </div>
+            
+            <div id="statusPanel">
+                <div class="status-item">
+                    <span>👥 Villagers: <span id="villagers">0</span></span>
+                </div>
+                <div class="status-item">
+                    <span>⏰ Time Left: <span id="timeLeft">0</span>s</span>
+                </div>
+                <div class="status-item">
+                    <span>🌉 Bridge: <span id="bridgeProgress">0</span>%</span>
+                </div>
+                <div class="status-item">
+                    <span>😇 Moral: <span id="moralStanding">100</span></span>
+                </div>
+                <div class="status-item">
+                    <span>🔢 Bridge Materials Needed: <span id="bridgeMaterialsNeeded"></span></span>
+                </div>
+            </div>
+            
+            <div id="controlsPanel">
+                <div class="controls-info">
+                    <p><strong>Controls:</strong></p>
+                    <p>WASD/Arrow Keys: Move</p>
+                    <p>Click: Move to position</p>
+                    <p>E/Space: Interact</p>
+                    <p>ESC: Pause/Menu</p>
+                </div>
+            </div>
+        </div>
+        
+        <div id="menuScreen" class="screen">
+            <div class="menu-content">
+                <h1>The Bridge Keeper</h1>
+                <h2>Save the village from the flood</h2>
+                <div class="menu-buttons">
+                    <button id="startGame" class="menu-btn">Start Game</button>
+                    <button id="showTutorial" class="menu-btn">Tutorial</button>
+                    <button id="showSettings" class="menu-btn">Settings</button>
+                </div>
+                
+                <div class="instructions">
+                    <p>Gather wood, stone, and metal to build the bridge.</p>
+                    <p>Save as many villagers as possible before the flood arrives!</p>
+                    <p>Every choice has moral consequences.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div id="gameOverScreen" class="screen hidden">
+            <div class="menu-content">
+                <h1 id="gameOverTitle">Game Over</h1>
+                <div id="gameOverStats"></div>
+                <div class="menu-buttons">
+                    <button id="playAgain" class="menu-btn">Play Again</button>
+                    <button id="backToMenu" class="menu-btn">Main Menu</button>
+                </div>
+            </div>
+        </div>
+        
+        <div id="pauseScreen" class="screen hidden">
+            <div class="menu-content">
+                <h1>Paused</h1>
+                <div class="menu-buttons">
+                    <button id="resumeGame" class="menu-btn">Resume</button>
+                    <button id="saveGame" class="menu-btn">Save Game</button>
+                    <button id="mainMenu" class="menu-btn">Main Menu</button>
+                </div>
+            </div>
+        </div>
+        
+        <div id="confirmDialog" class="dialog hidden">
+            <div class="dialog-content">
+                <h3 id="confirmTitle">Confirm Action</h3>
+                <p id="confirmMessage"></p>
+                <div class="dialog-buttons">
+                    <button id="confirmYes" class="dialog-btn">Yes</button>
+                    <button id="confirmNo" class="dialog-btn">No</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="game.js"></script>
+</body>
+</html>
